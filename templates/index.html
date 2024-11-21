@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Agriculture Information Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/crops">Products</a></li>
+                <li><a href="/form">Add Crop Info</a></li>
+                <li><a href="/view_crops">Crop Data</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Welcome to the Agriculture Portal</h2>
+            <p>Your one-stop source for information on crops, farming techniques, and more.</p>
+        </section>
+        <section class="features">
+            <div class="feature">
+                <h3>Learn About Crops</h3>
+                <p>Explore detailed information on various crops including their benefits and cultivation methods.</p>
+                <a href="crops.html" class="btn">Learn More</a>
+            </div>
+            <div class="feature">
+                <h3>Farming Techniques</h3>
+                <p>Discover modern farming techniques and how to implement them for better yield and efficiency.</p>
+                <a href="techniques.html" class="btn">Learn More</a>
+            </div>
+            <div class="feature">
+                <h3>Contact Us</h3>
+                <p>Get in touch with us for more information or support regarding agriculture.</p>
+                <a href="contact.html" class="btn">Contact</a>
+            </div>
+        </section>
+    </main>
+    <!-- <footer>
+        <p>&copy; 2024 Agriculture Portal. All rights reserved.</p>
+    </footer> -->
+</body>
+</html>

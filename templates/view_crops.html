@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Crops</title>
+
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>All Submitted Crop Data</h1>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/crops">Products</a></li>
+                <li><a href="/form">Add Crop Info</a></li>
+                <li><a href="/view_crops">Crop Data</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+
+    <!-- Display the table only if there is data -->
+    {% if crops %}
+    <div id="cropData">
+        <img id = "myImage" src="{{ url_for('static', filename='images/wheat.png') }}" style="width: 100px;">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Crop Name</th>
+                <th>Quantity (kg)</th>
+                <th>Price (per kg)</th>
+                <th>Farmer Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop over the 'crops' list and display each row -->
+            {% for crop in crops %}
+            <tr>
+                <td>{{ crop[0] }}</td>
+                <td>{{ crop[1] }}</td>
+                <td>{{ crop[2] }}</td>
+                <td>{{ crop[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <button onclick="generatePDF()">Download PDF</button>
+
+        <script>
+            function generatePDF() {
+                var element = document.getElementById('cropData');
+                html2pdf().from(element).save('crop_data.pdf');
+            }
+        </script>
+
+<script>
+    function generatePDF() {
+        var element = document.getElementById('cropData');
+        html2pdf().from(element).save('crop_data.pdf');
+    }
+</script>
+    {% else %}
+    <p>No crops have been submitted yet.</p>
+    {% endif %}
+
+    <br>
+    <a href="/form">Submit another crop</a>
+</body>
+</html>

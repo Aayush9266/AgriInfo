@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Information Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Agriculture E-Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="crop_form.html">Add Crop Info</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Enter Crop Information</h2>
+        <form action="/submit_crop" method="POST">
+            <label for="crop_name">Crop Name:</label>
+            <input type="text" id="crop_name" name="crop_name" required><br><br>
+
+            <label for="quantity">Quantity (kg):</label>
+            <input type="number" id="quantity" name="quantity" required><br><br>
+
+            <label for="price">Price (per kg):</label>
+            <input type="number" id="price" name="price" required><br><br>
+
+            <label for="farmer_name">Farmer's Name:</label>
+            <input type="text" id="farmer_name" name="farmer_name" required><br><br>
+
+            <button type="submit">Submit Crop Info</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Agriculture E-Commerce</p>
+    </footer>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Information Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Agriculture E-Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/crops">Products</a></li>
+                <li><a href="/form">Add Crop Info</a></li>
+                <li><a href="/view_crops">Crop Data</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Enter Crop Information</h2>
+        <form action="http://127.0.0.1:5000/submit_crop" method="POST">
+            <label for="crop_name">Crop Name:</label>
+            <input type="text" id="crop_name" name="crop_name" required><br><br>
+
+            <label for="quantity">Quantity (kg):</label>
+            <input type="number" id="quantity" name="quantity" required><br><br>
+
+            <label for="price">Price (per kg):</label>
+            <input type="number" id="price" name="price" required><br><br>
+
+            <label for="farmer_name">Farmer's Name:</label>
+            <input type="text" id="farmer_name" name="farmer_name" required><br><br>
+
+            <button type="submit">Submit Crop Info</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Agriculture E-Commerce</p>
+    </footer>
+</body>
+</html>

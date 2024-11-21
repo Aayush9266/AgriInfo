@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crops Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Agriculture Information Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/crops">Products</a></li>
+                <li><a href="/form">Add Crop Info</a></li>
+                <li><a href="/view_crops">Crop Data</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Crops Information</h2>
+            <article>
+                <h3>Wheat</h3>
+                <img src="{{ url_for('static', filename='images/wheat.png') }}" alt="Wheat">
+                <p>Wheat is a staple food crop used to make flour for bread, pasta, and other products. It thrives in temperate climates.</p>
+            </article>
+            <article>
+                <h3>Corn</h3>
+                <img src="{{ url_for('static', filename='images/corn.png') }}" alt="Corn">
+                <p>Corn is a versatile crop used for food, feed, and fuel. It grows well in warm climates with adequate rainfall.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Agriculture Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
